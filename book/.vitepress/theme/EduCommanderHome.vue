@@ -1,15 +1,24 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+const usePrompt = '阅读 https://github.com/flyingpig707/EduAICommander/tree/main/skills/edu-ai-commander-companion 并加载《教育AI指挥官（高校版）》应用技能包，把这本书作为我的教改与实训工作手册'
 const coauthorPrompt = '阅读 https://github.com/flyingpig707/EduAICommander/tree/main/skills/edu-ai-commander-coauthor 并参与《教育AI指挥官（高校版）》共同写作'
-const copied = ref(false)
 
-async function copyPrompt() {
+const copied = ref('')
+
+const capabilities = [
+  { number: '01', title: '三力融合底座', description: '专业能力立身 × AI九段杠杆 × 十步问道闭环，培养“自用之才”。' },
+  { number: '02', title: '六新课堂重构', description: '新教法、新助手、新教材、新课程，让教师成为八段“AI领学官”。' },
+  { number: '03', title: '产教过程监理', description: '5天/3周实训样板 + 80分企业准入审计 + ISO9000全景数字监理。' },
+  { number: '04', title: '大学开门办学', description: '面向政务医疗、区域企业、人社就业与教育出海输出终身AI更新。' },
+]
+
+async function copyPrompt(kind: string, text: string) {
   try {
-    await navigator.clipboard.writeText(coauthorPrompt)
+    await navigator.clipboard.writeText(text)
   } catch {
     const input = document.createElement('textarea')
-    input.value = coauthorPrompt
+    input.value = text
     input.setAttribute('readonly', '')
     input.style.position = 'fixed'
     input.style.opacity = '0'
@@ -18,15 +27,20 @@ async function copyPrompt() {
     document.execCommand('copy')
     input.remove()
   }
-  copied.value = true
-  window.setTimeout(() => { copied.value = false }, 2400)
+  copied.value = kind
+  window.setTimeout(() => { copied.value = '' }, 2400)
 }
 
-const capabilities = [
-  { number: '01', title: '三力融合底座', description: '专业能力立身 × AI九段杠杆 × 十步问道闭环，培养“自用之才”。' },
-  { number: '02', title: '六新课堂重构', description: '新教法、新助手、新教材、新课程，让教师成为八段“AI领学官”。' },
-  { number: '03', title: '产教过程监理', description: '5天/3周实训样板 + 80分企业准入审计 + ISO9000全景数字监理。' },
-  { number: '04', title: '大学开门办学', description: '面向政务医疗、区域企业、人社就业与教育出海输出终身AI更新。' },
+const useModes = [
+  { number: '01', title: '陪读答疑', description: '按章引用、解释“三力融合”“六新”“九段×十步”等核心概念，为校领导生成决策简报。' },
+  { number: '02', title: '教改诊断', description: '用十维自检表与“三力融合”诊断卡，现场体检你的专业，产出单页诊断与下一步三件事。' },
+  { number: '03', title: '课堂与实训设计', description: '90分钟四步课堂改造、学科AI助手压测、5天/3周实训排课，直接生成可用的排课表与量规。' },
+]
+
+const useSteps = [
+  { number: '01', title: '复制上面那条指令', description: '发给 WorkBuddy、Claude、Codex 或任何具备联网阅读能力的 Agent。' },
+  { number: '02', title: 'Agent 加载书稿技能包', description: '它会从 GitHub 读取正式书稿与十大工具卡，不改动任何原文。' },
+  { number: '03', title: '说出你的课程或专业', description: '陪读、诊断、改造、排课——按你的真实场景拿到可执行方案。' },
 ]
 
 const steps = [
@@ -50,7 +64,7 @@ const steps = [
         <div class="signal-actions">
           <a class="signal-button signal-button--primary" href="/01-%E5%BA%8F%E8%A8%80%E4%B8%8E%E5%86%B3%E7%AD%96%E8%80%85%E5%AF%BC%E8%AF%BB">开始阅读</a>
           <a class="signal-button signal-button--secondary" href="/toolkit.html" target="_blank">🖨️ A4行动工具卡</a>
-          <a class="signal-button signal-button--secondary" href="#coauthor">参与共同写作</a>
+          <a class="signal-button signal-button--secondary" href="#use">用 Agent 把书用起来</a>
         </div>
       </div>
 
@@ -67,17 +81,49 @@ const steps = [
       </article>
     </section>
 
-    <section id="coauthor" class="coauthor-section" aria-labelledby="coauthor-title">
+    <section id="use" class="coauthor-section use-section" aria-labelledby="use-title">
+      <div class="coauthor-heading">
+        <p class="section-kicker">USE IT WITH YOUR AGENT</p>
+        <h2 id="use-title">把这本书交给你的 Agent，教改工具直接用起来。</h2>
+        <p>多数读者要的不是“参与写书”，而是“把书用好”。复制下面这条指令发给你的 Agent（WorkBuddy、Claude、Codex 均可），它会加载书稿技能包，陪你读、帮你诊断、替你排课。</p>
+      </div>
+
+      <div class="coauthor-workflow">
+        <div class="prompt-box">
+          <code>{{ usePrompt }}</code>
+          <button type="button" :aria-label="copied === 'use' ? '应用指令已复制' : '复制应用指令'" @click="copyPrompt('use', usePrompt)">{{ copied === 'use' ? '已复制' : '复制应用指令' }}</button>
+        </div>
+
+        <ol class="coauthor-steps use-steps-grid">
+          <li v-for="step in useSteps" :key="step.number">
+            <span class="step-number">{{ step.number }}</span><h3>{{ step.title }}</h3><p>{{ step.description }}</p>
+          </li>
+        </ol>
+
+        <div class="use-modes">
+          <article v-for="mode in useModes" :key="mode.number" class="use-mode-item">
+            <span class="section-number">{{ mode.number }}</span>
+            <div><h3>{{ mode.title }}</h3><p>{{ mode.description }}</p></div>
+          </article>
+        </div>
+
+        <div class="contribution-types">
+          <span>四种用法</span><p>陪读答疑 · 教改诊断 · 课堂改造 · 实训与学段设计（详见技能包 <code>skills/edu-ai-commander-companion</code>）</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="coauthor" class="coauthor-section coauthor-section--light" aria-labelledby="coauthor-title">
       <div class="coauthor-heading">
         <p class="section-kicker">AGENT-NATIVE COAUTHORING</p>
-        <h2 id="coauthor-title">只管说出你的教学实践，剩下的交给 Agent。</h2>
-        <p>无需整理格式、研究规则或熟悉 GitHub。WorkBuddy、Codex 或其他具备 GitHub 能力的 Agent，会帮助你阅读书稿、对齐“三力融合×六新教改”框架、完成师生隐私脱敏自检并准备 Pull Request。</p>
+        <h2 id="coauthor-title">想参与写？把你的教学实践变成提案。</h2>
+        <p>少数同行会想参与共同写作。无需整理格式、研究规则或熟悉 GitHub，Agent 会帮助你阅读书稿、对齐“三力融合×六新教改”框架、完成师生隐私脱敏自检并准备 Pull Request。</p>
       </div>
 
       <div class="coauthor-workflow">
         <div class="prompt-box">
           <code>{{ coauthorPrompt }}</code>
-          <button type="button" :aria-label="copied ? '参与指令已复制' : '复制参与指令'" @click="copyPrompt">{{ copied ? '已复制' : '复制参与指令' }}</button>
+          <button type="button" :aria-label="copied === 'coauthor' ? '参与指令已复制' : '复制参与指令'" @click="copyPrompt('coauthor', coauthorPrompt)">{{ copied === 'coauthor' ? '已复制' : '复制参与指令' }}</button>
         </div>
 
         <ol class="coauthor-steps">

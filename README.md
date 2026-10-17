@@ -28,7 +28,7 @@ EduAICommander/
 ├── assets/           封面、标识和项目展示资源
 ├── contributions/    外部高校教师与生态伙伴的共建提案库
 ├── scripts/          确定性校验与维护脚本
-├── skills/           Agent 共写技能包（edu-ai-commander-coauthor）
+├── skills/           Agent 技能包（edu-ai-commander-companion 应用陪读；edu-ai-commander-coauthor 共同写作）
 └── .github/          GitHub 模板与自动化工作流
 ```
 
