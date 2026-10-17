@@ -2,14 +2,14 @@
 
 > AI COMMANDER FOR HIGHER EDUCATION
 
-《教育AI指挥官（高校版）——从专业人才培养到复合型人才培养：高校与高职的AI教改、实训与开门办学指南》独立书稿、A4行动工具箱、开放共写与在线阅读项目。
+《教育AI指挥官（高校版）——成为AI指挥官，培养AI指挥官：高校高职的AI实训指南》独立书稿、A4行动工具箱、开放共写与在线阅读项目。
 
 ## 项目状态
 
 - 当前阶段：V0.1 开放阅读基线书稿、13页 A4 标准可打印行动工具卡手册与 VitePress 阅读站已经建立。
 - 中文书名：教育AI指挥官（高校版）。
 - 英文标识：AI COMMANDER FOR HIGHER EDUCATION。
-- 署名作者：吴鹏、刘继军等 著。
+- 署名作者：刘继军、吴鹏等 著。
 - 计划仓库：`flyingpig707/EduAICommander`。
 - 计划域名：`edu.learn-together.cn`。
 

@@ -9,7 +9,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '教育AI指挥官（高校版）',
   titleTemplate: ':title｜教育AI指挥官（高校版）',
-  description: '《教育AI指挥官（高校版）》——从专业人才培养到复合型人才培养：高校与高职的AI教改、实训与开门办学指南。吴鹏、刘继军等著。',
+  description: '《教育AI指挥官（高校版）》——成为AI指挥官，培养AI指挥官：高校高职的AI实训指南。刘继军、吴鹏等著。',
   cleanUrls: true,
   lastUpdated: true,
   sitemap: {
@@ -121,7 +121,7 @@ export default defineConfig({
     ],
     footer: {
       message: '在智力大通胀年代，把人培养成驾驭算力的“自用之才”',
-      copyright: '吴鹏、刘继军等 著 · AI共生岛出品',
+      copyright: '刘继军、吴鹏等 著 · AI共生岛出品',
     },
   },
 })

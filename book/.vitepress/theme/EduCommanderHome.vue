@@ -44,9 +44,9 @@ const steps = [
         <div class="eyebrow-row">
           <span>AI COMMANDER FOR HIGHER EDUCATION</span><span class="eyebrow-rule" aria-hidden="true"></span><span>开放共写 · 面向未来的大学</span>
         </div>
-        <h1 id="home-title"><strong>教育AI指挥官</strong><span>从加一门AI课到重塑育人底盘</span></h1>
+        <h1 id="home-title"><strong>成为AI指挥官，培养AI指挥官</strong><span>高校高职的AI实训指南</span></h1>
         <p class="signal-hero__tagline">高校与高职的 AI 教改、实训与开门办学指南</p>
-        <p class="signal-hero__authors">吴鹏 · 刘继军 等 著</p>
+        <p class="signal-hero__authors">刘继军 · 吴鹏 等 著</p>
         <div class="signal-actions">
           <a class="signal-button signal-button--primary" href="/01-%E5%BA%8F%E8%A8%80%E4%B8%8E%E5%86%B3%E7%AD%96%E8%80%85%E5%AF%BC%E8%AF%BB">开始阅读</a>
           <a class="signal-button signal-button--secondary" href="/toolkit.html" target="_blank">🖨️ A4行动工具卡</a>
@@ -55,10 +55,8 @@ const steps = [
       </div>
 
       <div class="signal-hero__visual">
-        <img src="/assets/campus-signal-blueprint.png" alt="大学校园、科研实验室与现代产业园区通过AI信息轨迹连接的工程蓝图" />
+        <img src="/assets/ai-commander-capabilities.png" alt="AI指挥官三大核心能力模型：商业能力、AI能力与专业能力三力融合，AI指挥官等于指挥型人才" />
         <p class="visual-kicker">THREE CAPABILITIES<br />× SIX INNOVATIONS</p>
-        <p class="visual-statement">从被动执行的“他用之才”<br />走向定义问题的“自用之才”</p>
-        <p class="visual-caption">师—机—生协同课堂 × 产教融合数字监理</p>
       </div>
     </section>
 
@@ -102,7 +100,7 @@ const steps = [
 
     <section class="about-book" aria-labelledby="about-title">
       <p class="section-kicker">ABOUT THE BOOK & TOOLKIT</p>
-      <h2 id="about-title">不是孤立加一门软件课，<br />而是一所大学面向智能时代的系统重构。</h2>
+      <h2 id="about-title">教师自身要成长为AI指挥官，<br />培养适应人机共生时代的指挥官人才。</h2>
       <p>《教育AI指挥官（高校版）》从百万 Token 算力大通胀切入，提出“专业能力 × AI能力 × 商业与管理能力”三力融合模型，系统拆解新教法、新助手、新教材、新课程、新学段、新人才“六新”改革，并提供 13 页即拿即用的 A4 标准打印版教改与实训行动工具卡手册。</p>
       <div style="display: flex; gap: 28px; flex-wrap: wrap;">
         <a class="text-link" href="/00-%E5%B0%81%E9%9D%A2">查看全书目录</a>

@@ -242,23 +242,26 @@
   position: relative;
   min-height: 430px;
   overflow: hidden;
-  color: #fff;
-  background: var(--breakthrough-blue);
+  color: var(--breakthrough-ink);
+  background: #ffffff;
+  border: 1px solid rgba(16, 63, 167, 0.16);
+  box-shadow: 22px 24px 0 rgba(16, 63, 167, 0.09);
 }
 
 .signal-hero__visual img {
   width: 100%;
   height: 100%;
   margin: 0;
-  object-fit: cover;
-  object-position: center bottom;
-  opacity: 0.94;
+  object-fit: contain;
+  object-position: center;
+  opacity: 1;
+  padding: 14px;
 }
 
 .signal-hero__visual p {
   position: absolute;
   margin: 0 !important;
-  color: #fff;
+  color: var(--breakthrough-blue);
 }
 
 .visual-kicker {
@@ -267,25 +270,26 @@
   font-family: var(--vp-font-family-mono);
   font-size: 12px;
   letter-spacing: 0.2em;
-  text-shadow: 0 2px 8px rgba(6, 24, 68, 0.75);
+  text-shadow: none;
 }
 
 .visual-statement {
   top: 38px;
   right: 32px;
   padding-left: 16px;
-  border-left: 2px solid rgba(255, 255, 255, 0.8);
+  border-left: 2px solid rgba(16, 63, 167, 0.55);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  text-shadow: 0 2px 8px rgba(6, 24, 68, 0.75);
+  text-shadow: none;
 }
 
 .visual-caption {
   right: 0;
   bottom: 0;
   padding: 16px 24px;
-  background: rgba(6, 35, 97, 0.9);
+  color: #fff;
+  background: rgba(16, 63, 167, 0.92);
   font-size: 13px;
   letter-spacing: 0.08em;
 }
