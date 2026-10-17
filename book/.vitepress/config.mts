@@ -28,7 +28,6 @@ export default defineConfig({
       { text: '开始阅读', link: '/01-%E5%BA%8F%E8%A8%80%E4%B8%8E%E5%86%B3%E7%AD%96%E8%80%85%E5%AF%BC%E8%AF%BB' },
       { text: '🖨️ A4行动工具卡', link: '/toolkit.html', target: '_blank' },
       { text: 'Agent 应用', link: '/#use' },
-      { text: '共同写作', link: '/#coauthor' },
       { text: '全书目录', link: '/00-%E5%B0%81%E9%9D%A2' },
     ],
     sidebar: [
@@ -114,7 +113,7 @@ export default defineConfig({
       },
     },
     editLink: {
-      pattern: '/#coauthor',
+      pattern: '/#use',
       text: '用 Agent 参与共同写作',
     },
     socialLinks: [

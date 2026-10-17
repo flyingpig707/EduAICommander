@@ -692,99 +692,29 @@
   }
 }
 
-/* ===== Agent 应用主区块（use-section）与共同写作浅色次区块 ===== */
+/* ===== Agent 双指令区块 ===== */
 
-.use-steps-grid {
-  grid-template-columns: repeat(3, 1fr) !important;
-}
-
-.use-modes {
+.dual-prompts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  margin-top: 28px !important;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.28);
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
 }
 
-.use-mode-item {
-  display: flex;
-  gap: 16px;
-  padding: 22px 24px;
-  background: var(--breakthrough-blue-deep);
-}
-
-.use-mode-item h3 {
-  margin: 0 0 8px !important;
+.dual-prompt h3 {
+  margin: 0 0 12px !important;
   color: #fff;
-  font-size: 16px;
-  letter-spacing: 0.02em;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
-.use-mode-item p {
-  margin: 0 !important;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 13px;
-  line-height: 1.75;
-}
-
-.use-mode-item .section-number {
-  color: var(--breakthrough-coral);
-}
-
-.coauthor-section--light {
-  color: var(--breakthrough-ink);
-  background: var(--breakthrough-paper);
-  border-top: 1px solid var(--breakthrough-rule);
-}
-
-.coauthor-section--light .section-kicker {
-  color: var(--breakthrough-blue);
-}
-
-.coauthor-section--light .coauthor-heading h2 {
-  color: var(--breakthrough-ink);
-}
-
-.coauthor-section--light .coauthor-heading > p:last-child {
-  color: rgba(11, 23, 52, 0.72);
-}
-
-.coauthor-section--light .coauthor-steps li {
-  border-top-color: rgba(16, 63, 167, 0.35);
-}
-
-.coauthor-section--light .coauthor-steps .step-number,
-.coauthor-section--light .coauthor-steps h3 {
-  color: var(--breakthrough-blue);
-}
-
-.coauthor-section--light .coauthor-steps p {
-  color: rgba(11, 23, 52, 0.66);
-}
-
-.coauthor-section--light .contribution-types {
-  border-top-color: rgba(16, 63, 167, 0.22);
-  color: rgba(11, 23, 52, 0.62);
-}
-
-.coauthor-section--light .contribution-types span {
-  color: var(--breakthrough-blue);
-}
-
-.coauthor-section--light .coauthor-links a {
-  border-color: rgba(16, 63, 167, 0.3);
-  color: var(--breakthrough-blue);
-}
-
-.coauthor-section--light .coauthor-links a:hover {
-  border-color: var(--breakthrough-blue);
-  background: rgba(16, 63, 167, 0.06);
+.dual-prompt .prompt-box {
+  grid-template-columns: 1fr 110px;
+  min-height: 118px;
 }
 
 @media (max-width: 1080px) {
-  .use-modes,
-  .use-steps-grid {
-    grid-template-columns: 1fr !important;
+  .dual-prompts {
+    grid-template-columns: 1fr;
   }
 }
