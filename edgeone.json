@@ -1,0 +1,7 @@
+{
+  "name": "edu-ai-commander",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm run docs:build",
+  "outputDirectory": "book/.vitepress/dist",
+  "nodeVersion": "22.17.1"
+}
